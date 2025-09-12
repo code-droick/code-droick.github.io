@@ -1,0 +1,127 @@
+:root {
+    --color-principal: #004d99;
+    --color-secundario: #003366;
+    --color-acento: #ffc107;
+    --color-acentoS: #e5ad03;
+    --color-fondo: #f0f2f5;
+    --color-texto: #333;
+
+    --color-marcos: #C8102E; /* Color principal */
+    --color-marcosS: #9C273A; /* Color secundario (más oscuro) */
+
+    --color-lucas: #582C83;
+    --color-lucasS: #422C58;
+
+    --color-mateo: #0033A0;
+    --color-mateoS: #143376;
+
+    --color-juan: #007A33;
+    --color-juanS: #0D5029;
+
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --borde-radio: 8px;
+    --sombra-sutil: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+body {
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    box-shadow: var(--sombra-sutil);
+}
+
+.logo-general {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.main-header .titulo-colegio {
+    font-size: 1.2em;
+    margin-bottom: 0;
+    color: var(--color-principal);
+}
+
+.btn-modern {
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--borde-radio);
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-modern i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.main-footer {
+    background-color: var(--color-principal);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+    border-top: 1px solid #ddd;
+}
+
+/* ------------------------------------------- */
+/* Reglas Responsive Universales     */
+/* ------------------------------------------- */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.95em;
+    }
+
+    .main-header {
+        padding: 15px;
+    }
+    
+    .main-header .logo {
+        width: 80px;
+    }
+
+    .main-header .titulo-colegio {
+        font-size: 1em;
+    }
+
+    .btn-modern {
+        padding: 12px 20px;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .btn-modern i {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-modern {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}

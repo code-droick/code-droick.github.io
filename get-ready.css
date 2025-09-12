@@ -1,0 +1,513 @@
+@import url('general.css');
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra-sutil);
+}
+
+.confirmation-message {
+    text-align: center;
+    padding: 30px;
+    border-radius: var(--borde-radio);
+    background-color: #e2f9e4; /* Un verde claro para el éxito */
+    border: 1px solid #c3e6cb;
+    margin-bottom: 30px;
+}
+
+.success-icon {
+    font-size: 4em;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.success-title {
+    color: #28a745;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.success-text {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Estilos de las pestañas */
+.tabs-container {
+    border: 1px solid #ddd;
+    border-radius: var(--borde-radio);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-button {
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--color-principal);
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-button:hover {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.tab-button.active {
+    background-color: white;
+    border-bottom: 3px solid var(--color-acento);
+}
+
+.tab-button.active:hover {
+    background-color: white;
+    border-bottom: 5px solid var(--color-acento);
+    color: var(--color-principal);
+}
+
+.tab-content-container {
+    padding: 20px;
+    background-color: white;
+    position: relative;
+}
+
+.tab-content {
+    display: none;
+    /* Remove position, top, left, right, bottom, opacity, pointer-events */
+    animation: fadeIn 0.5s forwards;
+}
+
+.tab-content.active {
+    display: block;
+    /* Remove opacity, pointer-events */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Estilos para la sección especial (sin parallax y con scroll vertical) */
+#seccion-especial.tab-content.active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    justify-items: center;
+    align-items: stretch;
+}
+
+.section-item {
+    padding: 30px;
+    border-radius: var(--borde-radio);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px; /* Altura mínima para una mejor visualización */
+}
+
+/* Agrupamos el contenido principal para un mejor control del centrado */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1; /* Para que el contenido ocupe el espacio disponible */
+}
+
+/* El resto de los estilos del overlay y el contenido se mantienen igual */
+.section-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.15); /* Menos opaco */
+    z-index: 1;
+}
+
+.section-item * {
+    position: relative;
+    z-index: 2;
+}
+
+.marco-section {
+    background: var(--color-marcosS);
+}
+.lucas-section {
+    background: var(--color-lucasS);
+}
+.mateo-section {
+    background: var(--color-mateoS);
+}
+.juan-section {
+    background: var(--color-juanS);
+}
+
+.section-logo {
+    width: 140px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.section-description {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.palmares-categorias {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.no-palmares {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    opacity: 0.8;
+    font-size: 1.1em;
+    text-align: center;
+}
+.categoria-estudiantes {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.95em;
+    color: var(--color-acento);
+}
+
+.categoria-item {
+    position: relative;
+    background: rgba(255,255,255,0.25); /* Fondo semitransparente, cámbialo por el color secundario de la tienda si quieres */
+    border-radius: 16px;
+    padding: 18px 14px 10px 14px;
+    min-width: 120px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+}
+
+.categoria-item:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.categoria-item i {
+    font-size: 3em;
+    color: var(--color-acento);
+    z-index: 2;
+}
+
+.categoria-item .sub {
+    font-size: 3em;
+    color: silver;
+    z-index: 2;
+}
+
+.floating-number {
+    position: absolute;
+    left: 50%;
+    top: 0.5px;
+    transform: translateX(-50%);
+    font-size: 3.5em;
+    color: rgba(0, 0, 0, 0.5); /* Verde con transparencia, ajusta el color si quieres */
+    font-weight: bold;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.categoria-nombre {
+    margin-top: 12px;
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+/* Fondo secundario por tienda */
+.marco-section .categoria-item { background: rgba(0, 56, 128, 0.18); }
+.lucas-section .categoria-item { background: rgba(0, 128, 255, 0.18); }
+.mateo-section .categoria-item { background: rgba(0, 128, 128, 0.18); }
+.juan-section .categoria-item  { background: rgba(128, 128, 0, 0.18); }
+
+.action-buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0 0 0;
+}
+
+.btn-modern {
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--borde-radio);
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--sombra-sutil);
+}
+
+.btn-modern i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Botón azul */
+.btn-submit {
+    background: linear-gradient(135deg, var(--color-principal) 60%, var(--color-secundario) 100%);
+}
+
+/* Botón amarillo */
+.btn-back {
+    background: linear-gradient(135deg, var(--color-acento) 60%, var(--color-acentoS) 100%);
+    color: #333;
+}
+
+.btn-modern:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    opacity: 0.92;
+}
+
+.timeline-container {
+    margin: 30px 0;
+}
+.timeline-years {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.timeline-year {
+    background: var(--color-principal);
+    color: white;
+    border: none;
+    border-radius: var(--borde-radio);
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.timeline-year.active,
+.timeline-year:hover {
+    background: var(--color-acento);
+    color: #333;
+}
+.timeline-events {
+    background: #f8f9fa;
+    border-radius: var(--borde-radio);
+    padding: 20px;
+    box-shadow: var(--sombra-sutil);
+    min-height: 80px;
+}
+.timeline-event h4 {
+    color: var(--color-principal);
+    margin-bottom: 5px;
+}
+.timeline-event p {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+/* Profesores */
+.profesores-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.profesor-card {
+    background: var(--color-secundario);
+    color: white;
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra-sutil);
+    padding: 18px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profesor-card:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    background: var(--color-principal);
+}
+.profesor-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid var(--color-acento);
+}
+.profesor-nombre {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.profesor-materia {
+    font-size: 0.95em;
+    color: var(--color-acento);
+    margin-bottom: 6px;
+}
+.profesor-detalle-container {
+    margin-top: 25px;
+    background: #fffbe6;
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra-sutil);
+    padding: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profesor-detalle h4 {
+    color: var(--color-principal);
+    margin-bottom: 8px;
+}
+.profesor-estadisticas {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.profesor-estadisticas li {
+    background: var(--color-acento);
+    color: #333;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.instalaciones-lista {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto 0 auto;
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+}
+
+.instalacion-item {
+    background: var(--color-secundario);
+    color: white;
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra-sutil);
+    padding: 16px 22px;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 1.08em;
+    transition: background 0.2s, transform 0.2s;
+    cursor: default;
+}
+
+.instalacion-item:hover {
+    background: var(--color-principal);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.instalacion-icon i {
+    font-size: 1.6em;
+    color: var(--color-acento);
+    margin-right: 6px;
+}
+
+.instalacion-nombre {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .palmares-categorias {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    .categoria-item {
+        min-width: 90px;
+        min-height: 90px;
+        padding: 12px 8px 8px 8px;
+    }
+    .categoria-nombre {
+        font-size: 0.95em;
+    }
+    #seccion-especial.tab-content.active {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .profesores-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profesor-card {
+        width: 90vw;
+        max-width: 320px;
+    }
+    .instalaciones-lista {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    .instalacion-item {
+        min-width: 120px;
+        padding: 12px 10px;
+        font-size: 1em;
+    }
+}

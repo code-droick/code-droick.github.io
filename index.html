@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso al Colegio</title>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="join.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="reingreso">
+        <img src="/img/logo-colegio.png" alt="Logo del Colegio" class="logo-join">
+        
+        <h1 class="titulo-colegio">COLEGIO PARROQUIAL CATÓLICO, U. E. "CRISTO DEL BUEN VIAJE"</h1>
+        
+        <h2 class="subtitulo-acceso">ACCESO AL SISTEMA</h2>
+        
+        <a href="#" class="btn-modern btn-nuevo-ingreso" id="openModalBtn">
+            <i class="fas fa-user-plus"></i> NUEVO INGRESO
+        </a>
+        <a href="#" class="btn-modern btn-reingreso">
+            <i class="fas fa-redo-alt"></i> REINGRESO
+        </a>
+    </div>
+
+    <footer class="main-footer">
+        <p>2025 &copy; Colegio Parroquial Católico "Cristo del Buen Viaje". Todos los derechos reservados.</p>
+        <p>Pampatar, Nueva Esparta, Venezuela.</p>
+    </footer>
+
+    <div id="avisoModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-header">
+            <h4>Curso: PRIMER GRADO</h4>
+        </div>
+        <div class="modal-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Información</th>
+                        <th>Enlace</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <p>Requisitos:</p>
+                            <ul>
+                                <li>Constancia de estudios del Colegio de procedencia. (Copia)</li>
+                                <li>Solvencia Administrativa del Colegio de procedencia (Copia)</li>
+                                <li>Certificado de Bautismo (Copia)</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Acuerdos de Convivencia y Paz. Abrir Acá ===>></td>
+                        <td>
+                            <a href="#" class="modal-link">Sí</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Entiendo y acepto que la solicitud no es garantía del cupo en la Institución, ya que depende de la disponibilidad y capacidad del grado solicitado.<br><br>Doy Fe que he leído, asimilado y entendido los Acuerdos de Convivencia y Paz de la Institución</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>IMPRIMA LA PLANILLA Y ENTREGUE EN LA INSTITUCIÓN JUNTO A LOS DOCUMENTOS SOLICITADOS DE LUNES A VIERNES DE 07:00 AM A 01:00 PM</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn modal-continue" disabled>Continuar</button>
+            <button class="modal-btn modal-close">Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="modal.js"></script>
+</body>
+</html>

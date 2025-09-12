@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Todo Listo!</title>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="get-ready.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <img src="/img/logo-colegio.png" alt="Logo del Colegio" class="logo-general">
+        <h1 class="titulo-colegio">COLEGIO PARROQUIAL CATÓLICO, U. E. "CRISTO DEL BUEN VIAJE"</h1>
+    </header>
+
+    <main class="main-content">
+        <div class="confirmation-message">
+            <i class="fas fa-check-circle success-icon"></i>
+            <h2 class="success-title">¡Su solicitud ha sido enviada con éxito!</h2>
+            <p class="success-text">Nos pondremos en contacto con usted en los próximos días para continuar con el
+                proceso.</p>
+        </div>
+
+        <div class="tabs-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="historia">
+                    <i class="fas fa-book"></i> HISTORIA
+                </button>
+                <button class="tab-button" data-tab="profesores">
+                    <i class="fas fa-chalkboard-teacher"></i> PROFESORES
+                </button>
+                <button class="tab-button" data-tab="instalaciones">
+                    <i class="fas fa-school"></i> INSTALACIONES
+                </button>
+                <button class="tab-button" data-tab="seccion-especial">
+                    <i class="fas fa-circle-user"></i> TIENDAS
+                </button>
+            </div>
+
+    <div class="tab-content-container">
+        <div id="historia" class="tab-content active">
+            <h3>Historia de la Institución</h3>
+            <div class="timeline-container">
+                <div class="timeline-years">
+                    <!-- Los años se generan dinámicamente con JS -->
+                    <!-- Ejemplo: -->
+                    <button class="timeline-year active" data-year="1998">1998</button>
+                    <button class="timeline-year" data-year="2005">2005</button>
+                    <button class="timeline-year" data-year="2010">2010</button>
+                    <button class="timeline-year" data-year="2018">2018</button>
+                    <button class="timeline-year" data-year="2025">2025</button>
+                </div>
+                <div class="timeline-events">
+                    <!-- Aquí se muestra el contenido dinámico del año seleccionado -->
+                    <div class="timeline-event">
+                        <h4>Fundación del Colegio</h4>
+                        <p>En 1998 se funda el Colegio Parroquial Católico "Cristo del Buen Viaje".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="profesores" class="tab-content">
+            <h3>Nuestro Equipo Docente</h3>
+            <div class="profesores-grid">
+                <!-- Cada profesor se genera dinámicamente con JS -->
+                <!-- Ejemplo: -->
+                <div class="profesor-card" data-profesor="1">
+                    <img src="img/profesores/profesor1.jpg" alt="Profesor 1">
+                    <div class="profesor-nombre">María González</div>
+                    <div class="profesor-materia">Matemáticas</div>
+                </div>
+                <div class="profesor-card" data-profesor="2">
+                    <img src="img/profesores/profesor2.jpg" alt="Profesor 2">
+                    <div class="profesor-nombre">José Pérez</div>
+                    <div class="profesor-materia">Lengua</div>
+                </div>
+                <!-- ...más profesores... -->
+            </div>
+            <div class="profesor-detalle-container">
+                <!-- Aquí se muestra el detalle dinámico del profesor seleccionado -->
+                <!-- Ejemplo: -->
+                <!--
+                            <div class="profesor-detalle">
+                                <h4>María González</h4>
+                                <p>Materia: Matemáticas</p>
+                                <ul class="profesor-estadisticas">
+                                    <li>Paciencia: 92</li>
+                                    <li>Creatividad: 85</li>
+                                    <li>Carisma: 88</li>
+                                    <li>Claridad: 90</li>
+                                    <li>Humor: 80</li>
+                                </ul>
+                                <p>Descripción divertida del profesor...</p>
+                            </div>
+                            -->
+            </div>
+        </div>
+    
+        <div id="instalaciones" class="tab-content">
+            <h3>Puntos de Interés de la Institución</h3>
+            <ul class="instalaciones-lista">
+                <li><i class="fas fa-door-open"></i> Oficina Principal</li>
+                <li><i class="fas fa-chalkboard"></i> Salón de Clases 1</li>
+                <li><i class="fas fa-chalkboard"></i> Salón de Clases 2</li>
+                <li><i class="fas fa-tree"></i> Patio Central</li>
+                <li><i class="fas fa-restroom"></i> Baños</li>
+                <li><i class="fas fa-basketball-ball"></i> Cancha Deportiva</li>
+                <!-- ...agrega más puntos según tu colegio... -->
+            </ul>
+        </div>
+    
+    
+        <div id="seccion-especial" class="tab-content">
+            <div class="section-item marco-section" data-background-image="marcos_bg.png">
+                <div class="content-wrapper">
+                    <img src="img/marcos.png" alt="Logo de Marcos" class="section-logo">
+                    <h3 class="section-title">Tienda Marcos</h3>
+                    <p class="section-description">
+                        Nuestra visión es formar líderes éticos y comprometidos con la sociedad, inculcando
+                        valores de respeto, solidaridad y excelencia académica.
+                    </p>
+                </div>
+                <!-- Ejemplo para una tienda sin palmarés -->
+                <div class="palmares">
+                    <h4>Palmarés</h4>
+                    <div class="palmares-categorias">
+                        <div class="categoria-item no-palmares">
+                            <i class="fas fa-users"></i>
+                            <div class="categoria-nombre">
+                                Aún no hay logros registrados.<br>
+                                <span class="categoria-estudiantes">Estudiantes en la tienda: 23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Agrega más categorías si lo necesitas -->
+            </div>
+            <div class="section-item lucas-section" data-background-image="lucas_bg.png">
+                <div class="content-wrapper">
+                    <img src="img/lucas.png" alt="Logo de Lucas" class="section-logo">
+                    <h3 class="section-title">Tienda Lucas</h3>
+                    <p class="section-description">
+                        Ofrecemos un currículo innovador que desafía a nuestros estudiantes a alcanzar su máximo
+                        potencial, con un enfoque en el pensamiento crítico y la creatividad.
+                    </p>
+                </div>
+                <!-- Ejemplo para una tienda sin palmarés -->
+                <div class="palmares">
+                    <h4>Palmarés</h4>
+                    <div class="palmares-categorias">
+                        <!--<div class="categoria-item">
+                            <span class="floating-number">1</span>
+                            <i class="fas fa-trophy"></i>
+                            <div class="categoria-nombre">Campeones de Fútbol</div>
+                        </div>
+                        <div class="categoria-item">
+                            <span class="floating-number">1</span>
+                            <i class="fas fa-medal"></i>
+                            <div class="categoria-nombre">Gincana Nivelación 2025</div>
+                        </div>-->
+                        <!-- Agrega más categorías si lo necesitas -->
+                        <div class="categoria-item no-palmares">
+                            <i class="fas fa-users"></i>
+                            <div class="categoria-nombre">
+                                <span class="categoria-estudiantes">Estudiantes en la tienda: 23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Agrega más categorías si lo necesitas -->
+            </div>
+            <div class="section-item mateo-section" data-background-image="mateo_bg.png">
+                <div class="content-wrapper">
+                    <img src="img/mateo.png" alt="Logo de Mateo" class="section-logo">
+                    <h3 class="section-title">Tienda Mateo</h3>
+                    <p class="section-description">
+                        Promovemos el desarrollo físico y social a través de una amplia gama de deportes y
+                        actividades extracurriculares que complementan la formación académica.
+                    </p>
+                </div>
+                <div class="palmares">
+                    <h4>Palmarés</h4>
+                    <div class="palmares-categorias">
+                        <div class="categoria-item">
+                            <span class="floating-number">1</span>
+                            <i class="fas fa-trophy"></i>
+                            <div class="categoria-nombre">Campeones de Fútbol</div>
+                        </div>
+                        <div class="categoria-item">
+                            <span class="floating-number">1</span>
+                            <i class="fas fa-medal"></i>
+                            <div class="categoria-nombre">Gincana Nivelación 2025</div>
+                        </div>
+                        <!-- Agrega más categorías si lo necesitas -->
+                        <div class="categoria-item no-palmares">
+                            <i class="fas fa-users"></i>
+                            <div class="categoria-nombre">
+                                <span class="categoria-estudiantes">Estudiantes en la tienda: 23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="section-item juan-section" data-background-image="juan_bg.png">
+                <div class="content-wrapper">
+                    <img src="img/juan.png" alt="Logo de Juan" class="section-logo">
+                    <h3 class="section-title">Tienda Juan</h3>
+                    <p class="section-description">
+                        Fomentamos el sentido de comunidad y el compromiso social mediante programas de
+                        voluntariado y proyectos que benefician a nuestro entorno.
+                    </p>
+                </div>
+                <!-- Ejemplo para una tienda sin palmarés -->
+                <div class="palmares">
+                    <h4>Palmarés</h4>
+                    <div class="palmares-categorias">
+                        <div class="categoria-item">
+                            <span class="floating-number">1</span>
+                            <i class="fas fa-trophy" class="sub"></i>
+                            <div class="categoria-nombre">Subcampeones de Fútbol</div>
+                        </div>
+                        <div class="categoria-item no-palmares">
+                            <i class="fas fa-users"></i>
+                            <div class="categoria-nombre">
+                                <span class="categoria-estudiantes">Estudiantes en la tienda: 23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Agrega más categorías si lo necesitas -->
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    </div>
+
+        <div class="action-buttons-container">
+            <a href="new-person.html" class="btn-modern btn-submit"><i class="fas fa-user-plus"></i> Inscribir otro
+                estudiante</a>
+            <a href="index.html" class="btn-modern btn-back"><i class="fas fa-home"></i> Regresar al inicio</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>2025 &copy; Colegio Parroquial Católico "Cristo del Buen Viaje". Todos los derechos reservados.</p>
+        <p>Pampatar, Nueva Esparta, Venezuela.</p>
+    </footer>
+
+    <script src="get-ready.js"></script>
+</body>
+
+</html>

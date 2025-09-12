@@ -1,0 +1,250 @@
+/* Importa las reglas generales */
+@import url('general.css');
+
+.reingreso {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.logo-join {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.titulo-colegio {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-texto);
+    margin-bottom: 30px;
+}
+
+.subtitulo-acceso {
+    font-size: 1.3em;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-texto);
+    margin-bottom: 20px;
+}
+
+/* Estilos específicos para los botones */
+.reingreso .btn-modern {
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.btn-nuevo-ingreso {
+    background-color: var(--color-principal);
+}
+
+.btn-nuevo-ingreso:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-reingreso {
+    background-color: var(--color-acento);
+}
+
+.btn-reingreso:hover {
+    background-color: var(--color-acentoS);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-imprimir {
+    background-color: #6c757d;
+}
+
+.btn-imprimir:hover {
+    background-color: #5a6268;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ----------------------------------- */
+/* Estilos del Pop-up o Modal */
+/* ----------------------------------- */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal.is-visible {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 0; /* Eliminado el padding inicial */
+    border-radius: var(--borde-radio);
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    overflow: hidden; /* Asegura que no se salgan los elementos redondeados */
+}
+
+/* Encabezado del modal */
+.modal-header {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid var(--color-acento);
+}
+
+.modal-header h4 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.close-btn {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+/* Cuerpo del modal */
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.modal-body th, .modal-body td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.95em;
+}
+
+.modal-body th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: var(--color-principal);
+}
+
+.modal-body ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.modal-body li {
+    margin-bottom: 5px;
+}
+
+.modal-link {
+    color: var(--color-principal); /* Mantenemos el color del texto */
+    text-decoration: none; /* Quitamos el subrayado */
+    cursor: pointer;
+    font-weight: bold;
+    padding: 8px 12px; /* Añadimos padding para el tamaño del cuadro */
+    border: 2px solid var(--color-principal); /* Borde con el color principal */
+    border-radius: var(--borde-radio); /* Bordes redondeados */
+    display: inline-block; /* Para que el padding y los bordes funcionen correctamente */
+    transition: all 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.modal-link:hover {
+    background-color: var(--color-principal); /* Fondo del color principal al pasar el cursor */
+    color: white; /* Texto blanco al pasar el cursor */
+    border-color: var(--color-secundario); /* Borde con el color secundario */
+}
+
+/* Pie de página del modal */
+.modal-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #eee;
+    background-color: #f8f9fa;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--borde-radio);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.modal-continue {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.modal-continue:disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.modal-continue:hover:not(:disabled) {
+    background-color: var(--color-secundario);
+}
+
+.modal-close {
+    background-color: #dc3545;
+    color: white;
+}
+
+.modal-close:hover {
+    background-color: #c82333;
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Ingreso - Colegio Cristo del Buen Viaje</title>
+    <head>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="new-person.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script></head>
+<body>
+    <header class="main-header">
+        <img src="/img/logo-colegio.png" alt="Logo del Colegio" class="logo">
+        <h1 class="titulo-colegio">COLEGIO PARROQUIAL CATÓLICO, U. E. "CRISTO DEL BUEN VIAJE"</h1>
+    </header>
+
+    <main class="main-content">
+        <h2 class="form-titulo">FORMULARIO DE NUEVO INGRESO</h2>
+        <form class="formulario-ingreso">
+            <div class="aviso-importante">
+                <i class="fas fa-exclamation-triangle"></i> En caso de no tener información de algún renglón, colocar NO APLICA
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-header">Datos de Solicitud</h3>
+                <div class="form-group-inline">
+                    <label for="anioEscolar">Indique Año Escolar en el que solicita cupo:<span class="required">*</span></label>
+                    <input type="text" id="anioEscolar" name="anioEscolar" value="2025 - 2026" readonly>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-header">Datos del Estudiante</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="curso">Curso:<span class="required">*</span></label>
+                        <select id="curso" name="curso" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="primerGrado">PRIMER GRADO</option>
+                            <option value="segundoGrado">SEGUNDO GRADO</option>
+                            <option value="tercerGrado">TERCER GRADO</option>
+                            <option value="cuartoGrado">CUARTO GRADO</option>
+                            <option value="quintoGrado">QUINTO GRADO</option>
+                            <option value="sextoGrado">SEXTO GRADO</option>
+                            <option value="primerAno">PRIMER AÑO</option>
+                            <option value="segundoAno">SEGUNDO AÑO</option>
+                            <option value="tercerAno">TERCER AÑO</option>
+                            <option value="cuartoAno">CUARTO AÑO</option>
+                            <option value="quintoAno">QUINTO AÑO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreEstudiante">Nombre:<span class="required">*</span></label>
+                        <input type="text" id="nombreEstudiante" name="nombreEstudiante" required>
+                        <label for="segundoNombreEstudiante">Segundo nombre:<span class="required">*</span></label>
+                        <input type="text" id="segundoNombreEstudiante" name="segundoNombreEstudiante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoEstudiante">Apellido:<span class="required">*</span></label>
+                        <input type="text" id="apellidoEstudiante" name="apellidoEstudiante" required>
+                        <label for="segundoApellidoEstudiante">Segundo apellido:<span class="required">*</span></label>
+                        <input type="text" id="segundoApellidoEstudiante" name="segundoApellidoEstudiante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoDocEstudiante">Tipo de documento:<span class="required">*</span></label>
+                        <select id="tipoDocEstudiante" name="tipoDocEstudiante" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="V">VENEZOLANO</option>
+                            <option value="E">EXTRANJERO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="docEstudiante">Documento:<span class="required">*</span></label>
+                        <input type="text" placeholder="Ej: 25004012" id="docEstudiante" name="docEstudiante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sexoEstudiante">Sexo:<span class="required">*</span></label>
+                        <select id="sexoEstudiante" name="sexoEstudiante" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="femenino">FEMENINO</option>
+                            <option value="masculino">MASCULINO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacEstudiante">Fecha de nacimiento:<span class="required">*</span></label>
+                        <input type="date" id="fechaNacEstudiante" name="fechaNacEstudiante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lugarNacEstudiante">Lugar de nacimiento:<span class="required">*</span></label>
+                        <input type="text" id="lugarNacEstudiante" name="lugarNacEstudiante" required>
+                    </div>
+<div class="form-group">
+    <label for="paisNacEstudiante">País de nacimiento:<span class="required">*</span></label>
+    <select id="paisNacEstudiante" name="paisNacEstudiante" required>
+        <option value="">-- SELECCIONE --</option>
+        <option value="VE">VENEZUELA</option>
+        <option value="OTRO">OTRO</option>
+    </select>
+</div>
+
+<div id="estadosVenezuelaContainer" class="form-group">
+    <label for="estadoNacEstudiante">Estado de nacimiento:<span class="required">*</span></label>
+    <select id="estadoNacEstudiante" name="estadoNacEstudiante" required>
+        <option value="">-- SELECCIONE --</option>
+        <option value="AMAZONAS">AMAZONAS</option>
+        <option value="ANZOATEGUI">ANZOÁTEGUI</option>
+        <option value="APURE">APURE</option>
+        <option value="ARAGUA">ARAGUA</option>
+        <option value="BARINAS">BARINAS</option>
+        <option value="BOLIVAR">BOLÍVAR</option>
+        <option value="CARABOBO">CARABOBO</option>
+        <option value="COJEDES">COJEDES</option>
+        <option value="DELTA AMACURO">DELTA AMACURO</option>
+        <option value="DISTRITO CAPITAL">DISTRITO CAPITAL</option>
+        <option value="FALCON">FALCÓN</option>
+        <option value="GUARICO">GUÁRICO</option>
+        <option value="LA GUAIRA">LA GUAIRA</option>
+        <option value="LARA">LARA</option>
+        <option value="MERIDA">MÉRIDA</option>
+        <option value="MIRANDA">MIRANDA</option>
+        <option value="MONAGAS">MONAGAS</option>
+        <option value="NUEVA ESPARTA">NUEVA ESPARTA</option>
+        <option value="PORTUGUESA">PORTUGUESA</option>
+        <option value="SUCRE">SUCRE</option>
+        <option value="TACHIRA">TÁCHIRA</option>
+        <option value="TRUJILLO">TRUJILLO</option>
+        <option value="YARACUY">YARACUY</option>
+        <option value="ZULIA">ZULIA</option>
+    </select>
+</div>
+
+<div id="paisesMundoContainer" class="form-group" style="display: none;">
+    <label for="paisMundo">País de nacimiento:<span class="required">*</span></label>
+<select id="paisMundo" name="paisMundo">
+    <option value="">-- SELECCIONE --</option>
+    <option value="AR">ARGENTINA</option>
+    <option value="BO">BOLIVIA</option>
+    <option value="CL">CHILE</option>
+    <option value="CO">COLOMBIA</option>
+    <option value="CR">COSTA RICA</option>
+    <option value="CU">CUBA</option>
+    <option value="DO">REPÚBLICA DOMINICANA</option>
+    <option value="EC">ECUADOR</option>
+    <option value="SV">EL SALVADOR</option>
+    <option value="GQ">GUINEA ECUATORIAL</option>
+    <option value="GT">GUATEMALA</option>
+    <option value="HN">HONDURAS</option>
+    <option value="MX">MÉXICO</option>
+    <option value="NI">NICARAGUA</option>
+    <option value="PA">PANAMÁ</option>
+    <option value="PY">PARAGUAY</option>
+    <option value="PE">PERÚ</option>
+    <option value="ES">ESPAÑA</option>
+    <option value="UY">URUGUAY</option>
+</select>
+</div>
+                    <div class="form-group">
+                        <label for="viveCon">¿Con quién vive?:<span class="required">*</span></label>
+                        <input type="text" id="viveCon" name="viveCon" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correoSolicitante">Correo de solicitante:<span class="required">*</span></label>
+                        <input type="email" id="correoSolicitante" name="correoSolicitante" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-header">Condición académica</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="institucionProcedencia">Institución de procedencia:<span class="required">*</span></label>
+                        <input type="text" id="institucionProcedencia" name="institucionProcedencia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccionInstitucion">Dirección institución de Procedencia:<span class="required">*</span></label>
+                        <input type="text" id="direccionInstitucion" name="direccionInstitucion" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-header">Datos del Padre</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="tipoDocPadre">Tipo de documento:<span class="required">*</span></label>
+                        <select id="tipoDocPadre" name="tipoDocPadre" required>
+                            <option value="">-- Seleccione --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="docPadre">Documento:<span class="required">*</span></label>
+                        <input type="text" placeholder="Ej: 25004012" id="docPadre" name="docPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoPadre">Apellidos:<span class="required">*</span></label>
+                        <input type="text" id="apellidoPadre" name="apellidoPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombrePadre">Nombres:<span class="required">*</span></label>
+                        <input type="text" id="nombrePadre" name="nombrePadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacPadre">Fecha de nacimiento:<span class="required">*</span></label>
+                        <input type="date" id="fechaNacPadre" name="fechaNacPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paisNacPadre">País de nacimiento:<span class="required">*</span></label>
+                        <select id="paisNacPadre" name="paisNacPadre" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="VE">VENEZUELA</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="estadoNacPadre">Estado de nacimiento:<span class="required">*</span></label>
+                        <input type="text" id="estadoNacPadre" name="estadoNacPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudadNacPadre">Ciudad de nacimiento:<span class="required">*</span></label>
+                        <input type="text" id="ciudadNacPadre" name="ciudadNacPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estadoCivilPadre">Estado Civil:<span class="required">*</span></label>
+                        <select id="estadoCivilPadre" name="estadoCivilPadre" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="SOLTERO">SOLTERO</option>
+                            <option value="CASADO">CASADO</option>
+                            <option value="DIVORCIADO">DIVORCIADO</option>
+                            <option value="VIUDO">VIUDO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="correoPadre">Correo:<span class="required">*</span></label>
+                        <input type="email" id="correoPadre" name="correoPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoFijoPadre">Teléfono fijo:<span class="required">*</span></label>
+                        <input type="tel" id="telefonoFijoPadre" name="telefonoFijoPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoMovilPadre">Teléfono móvil:<span class="required">*</span></label>
+                        <input type="tel" id="telefonoMovilPadre" name="telefonoMovilPadre" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="direccionPadre">Dirección:<span class="required">*</span></label>
+                        <textarea id="direccionPadre" name="direccionPadre" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="observacionPadre">Observación:<span class="required">*</span></label>
+                        <textarea id="observacionPadre" name="observacionPadre" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exAlumnoPadre">¿Es usted Ex-Alumno de la institución?:<span class="required">*</span></label>
+                        <select id="exAlumnoPadre" name="exAlumnoPadre" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="si">SÍ</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="periodoPadre">Indique el período:<span class="required">*</span></label>
+                        <input type="text" id="periodoPadre" name="periodoPadre" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-header">Datos de trabajo Padre</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="ocupacionPadre">Ocupación:<span class="required">*</span></label>
+                        <input type="text" id="ocupacionPadre" name="ocupacionPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="empresaPadre">Empresa donde trabaja:<span class="required">*</span></label>
+                        <input type="text" id="empresaPadre" name="empresaPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="puestoPadre">Puesto en el trabajo:<span class="required">*</span></label>
+                        <input type="text" id="puestoPadre" name="puestoPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ingresosPadre">Ingresos del trabajo:<span class="required">*</span></label>
+                        <input type="text" id="ingresosPadre" name="ingresosPadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoTrabajoPadre">Teléfono del trabajo:<span class="required">*</span></label>
+                        <input type="tel" id="telefonoTrabajoPadre" name="telefonoTrabajoPadre" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="direccionTrabajoPadre">Dirección del trabajo:<span class="required">*</span></label>
+                        <textarea id="direccionTrabajoPadre" name="direccionTrabajoPadre" rows="2" required></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3 class="section-header">Datos de la Madre</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="tipoDocMadre">Tipo de documento:<span class="required">*</span></label>
+                        <select id="tipoDocMadre" name="tipoDocMadre" required>
+                            <option value="">-- Seleccione --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="docMadre">Documento:<span class="required">*</span></label>
+                        <input type="text" placeholder="Ej: 25004012" id="docMadre" name="docMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoMadre">Apellidos:<span class="required">*</span></label>
+                        <input type="text" id="apellidoMadre" name="apellidoMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreMadre">Nombres:<span class="required">*</span></label>
+                        <input type="text" id="nombreMadre" name="nombreMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacMadre">Fecha de nacimiento:<span class="required">*</span></label>
+                        <input type="date" id="fechaNacMadre" name="fechaNacMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paisNacMadre">País de nacimiento:<span class="required">*</span></label>
+                        <select id="paisNacMadre" name="paisNacMadre" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="VE">VENEZUELA</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="estadoNacMadre">Estado de nacimiento:<span class="required">*</span></label>
+                        <input type="text" id="estadoNacMadre" name="estadoNacMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudadNacMadre">Ciudad de nacimiento:<span class="required">*</span></label>
+                        <input type="text" id="ciudadNacMadre" name="ciudadNacMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estadoCivilMadre">Estado Civil:<span class="required">*</span></label>
+                        <select id="estadoCivilMadre" name="estadoCivilMadre" required>
+                            <option value="">-- Seleccione --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="correoMadre">Correo:<span class="required">*</span></label>
+                        <input type="email" id="correoMadre" name="correoMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoFijoMadre">Teléfono fijo:<span class="required">*</span></label>
+                        <input type="tel" id="telefonoFijoMadre" name="telefonoFijoMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoMovilMadre">Teléfono móvil:<span class="required">*</span></label>
+                        <input type="tel" id="telefonoMovilMadre" name="telefonoMovilMadre" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="direccionMadre">Dirección:<span class="required">*</span></label>
+                        <textarea id="direccionMadre" name="direccionMadre" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="observacionMadre">Observación:<span class="required">*</span></label>
+                        <textarea id="observacionMadre" name="observacionMadre" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exAlumnaMadre">¿Es usted Ex-Alumna de la institución?:<span class="required">*</span></label>
+                        <select id="exAlumnaMadre" name="exAlumnaMadre" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="si">SÍ</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="periodoMadre">Indique el período:<span class="required">*</span></label>
+                        <input type="text" id="periodoMadre" name="periodoMadre" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-header">Datos de trabajo Madre</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="ocupacionMadre">Ocupación:<span class="required">*</span></label>
+                        <input type="text" id="ocupacionMadre" name="ocupacionMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="empresaMadre">Empresa donde trabaja:<span class="required">*</span></label>
+                        <input type="text" id="empresaMadre" name="empresaMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="puestoMadre">Puesto en el trabajo:<span class="required">*</span></label>
+                        <input type="text" id="puestoMadre" name="puestoMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ingresosMadre">Ingresos del trabajo:<span class="required">*</span></label>
+                        <input type="text" id="ingresosMadre" name="ingresosMadre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoTrabajoMadre">Teléfono del trabajo:<span class="required">*</span></label>
+                        <input type="tel" id="telefonoTrabajoMadre" name="telefonoTrabajoMadre" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="direccionTrabajoMadre">Dirección del trabajo:<span class="required">*</span></label>
+                        <textarea id="direccionTrabajoMadre" name="direccionTrabajoMadre" rows="2" required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-buttons-container">
+                <button type="submit" class="btn-modern form-submit-btn">Enviar Solicitud</button>
+                <button type="button" class="btn-modern btn-imprimir" id="printPdfBtn">
+                    <i class="fas fa-print"></i> Imprimir PDF
+                </button>
+                <a href="index.html" class="btn-modern btn-retroceder">
+                    <i class="fas fa-arrow-left"></i> Retroceder
+                </a>
+            </div>
+        </form>
+    </main>
+    
+    <footer class="main-footer">
+        <p>2025 &copy; Colegio Parroquial Católico "Cristo del Buen Viaje". Todos los derechos reservados.</p>
+        <p>Pampatar, Nueva Esparta, Venezuela.</p>
+    </footer>
+
+    <script src="form.js"></script>
+</body>
+</html>
