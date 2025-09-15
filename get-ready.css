@@ -140,7 +140,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-grow: 1; /* Para que el contenido ocupe el espacio disponible */
 }
 
 /* El resto de los estilos del overlay y el contenido se mantienen igual */
@@ -191,6 +190,83 @@
     line-height: 1.4;
 }
 
+/* Estilos para el nuevo contenido */
+.tienda-content {
+    margin-top: 20px;
+    text-align: left; /* Alineamos el texto a la izquierda para una lectura más natural */
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.tienda-p-intro, .tienda-p-quote-context, .tienda-p-final {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la cita */
+.tienda-blockquote {
+    border-left: 4px solid var(--color-acento);
+    padding-left: 15px;
+    margin: 25px 0;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.tienda-blockquote footer {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilos para la lista de dones */
+.dones-list {
+    margin-bottom: 25px;
+}
+
+.dones-list h4 {
+    color: var(--color-acento);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dones-list h4 .emoji {
+    font-size: 1.5em;
+}
+
+.dones-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dones-list li {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.dones-list li span {
+    font-weight: bold;
+    color: var(--color-acento);
+}
+
+/* Ajustes para el palmarés */
+.palmares {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+}
+
 .palmares-categorias {
     display: flex;
     gap: 18px;
@@ -225,6 +301,8 @@
     align-items: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     transition: box-shadow 0.2s;
+    flex-grow: 1;
+    flex-basis: 10;
 }
 
 .categoria-item:hover {

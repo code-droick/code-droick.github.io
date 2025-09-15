@@ -12,7 +12,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script></head>
 <body>
     <header class="main-header">
-        <img src="/img/logo-colegio.png" alt="Logo del Colegio" class="logo">
+        <img src="img/logo-colegio.png" alt="Logo del Colegio" class="logo">
         <h1 class="titulo-colegio">COLEGIO PARROQUIAL CATÓLICO, U. E. "CRISTO DEL BUEN VIAJE"</h1>
     </header>
 
@@ -67,6 +67,7 @@
                         <label for="tipoDocEstudiante">Tipo de documento:<span class="required">*</span></label>
                         <select id="tipoDocEstudiante" name="tipoDocEstudiante" required>
                             <option value="">-- Seleccione --</option>
+                            <option value="NA"> NO APLICA</option>
                             <option value="V">VENEZOLANO</option>
                             <option value="E">EXTRANJERO</option>
                         </select>
@@ -180,6 +181,147 @@
                     </div>
                 </div>
             </div>
+            <div class="form-section">
+                <h3 class="section-header">Representante del estudiante</h3>
+            <div class="form-group">
+                <label for="parentescoRepresentante">Parentesco con el estudiante:<span class="required">*</span></label>
+                <select id="parentescoRepresentante" name="parentescoRepresentante" required>
+                    <option value="">-- Seleccione --</option>
+                    <option value="PADRE">PADRE</option>
+                    <option value="MADRE">MADRE</option>
+                    <option value="OTRO">OTRO</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-header">Datos del Representante</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="tipoDocRepresentante">Tipo de documento:<span class="required">*</span></label>
+                        <select id="tipoDocRepresentante" name="tipoDocRepresentante" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="V">VENEZOLANO</option>
+                            <option value="E">EXTRANJERO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="docRepresentante">Documento:<span class="required">*</span></label>
+                        <input type="text" placeholder="Ej: 25004012" id="docRepresentante" name="docRepresentante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreRepresentante">Nombre:<span class="required">*</span></label>
+                        <input type="text" id="nombreRepresentante" name="nombreRepresentante" required>
+                        <label for="segundoNombreRepresentante">Segundo nombre:<span class="required">*</span></label>
+                        <input type="text" id="segundoNombreRepresentante" name="segundoNombreRepresentante" required>
+                    </div>                    
+                    <div class="form-group">
+                        <label for="apellidoRepresentante">Apellido:<span class="required">*</span></label>
+                        <input type="text" id="apellidoRepresentante" name="apellidoRepresentante" required>
+                        <label for="segundoApellidoRepresentante">Segundo apellido:<span class="required">*</span></label>
+                        <input type="text" id="segundoApellidoRepresentante" name="segundoApellidoRepresentante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacRepresentante">Fecha de nacimiento:<span class="required">*</span></label>
+                        <input type="date" id="fechaNacRepresentante" name="fechaNacRepresentante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paisNacRepresentante">País de nacimiento:<span class="required">*</span></label>
+                        <select id="paisNacRepresentante" name="paisNacRepresentante" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="VE">VENEZUELA</option>
+                            <option value="OTRO">OTRO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="estadoNacRepresentante">Estado de nacimiento:<span class="required">*</span></label>
+                        <input type="text" id="estadoNacRepresentante" name="estadoNacRepresentante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudadNacRepresentante">Ciudad de nacimiento:<span class="required">*</span></label>
+                        <input type="text" id="ciudadNacRepresentante" name="ciudadNacRepresentante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estadoCivilRepresentante">Estado Civil:<span class="required">*</span></label>
+                        <select id="estadoCivilRepresentante" name="estadoCivilRepresentante" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="SOLTERO">SOLTERO</option>
+                            <option value="CASADO">CASADO</option>
+                            <option value="DIVORCIADO">DIVORCIADO</option>
+                            <option value="VIUDO">VIUDO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="correoRepresentante">Correo:<span class="required">*</span></label>
+                        <input type="email" id="correoRepresentante" name="correoRepresentante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoFijoRepresentante">Teléfono fijo:<span class="required">*</span></label>
+                        <input type="tel" id="telefonoFijoRepresentante" name="telefonoFijoRepresentante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoMovilRepresentante">Teléfono móvil:<span class="required">*</span></label>
+                        <input type="tel" id="telefonoMovilRepresentante" name="telefonoMovilRepresentante" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="direccionRepresentante">Dirección:<span class="required">*</span></label>
+                        <textarea id="direccionRepresentante" name="direccionRepresentante" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="observacionRepresentante">Observación:<span class="required">*</span></label>
+                        <textarea id="observacionRepresentante" name="observacionRepresentante" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exAlumnoRepresentante">¿Es usted Ex-Alumno de la institución?:<span class="required">*</span></label>
+                        <select id="exAlumnoRepresentante" name="exAlumnoRepresentante" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="si">SÍ</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="periodoRepresentante">Indique el período:<span class="required">*</span></label>
+                        <input type="text" id="periodoRepresentante" name="periodoRepresentante" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-header">Datos de trabajo del Representante</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="ocupacionRepresentante">Ocupación:<span class="required">*</span></label>
+                        <input type="text" id="ocupacionRepresentante" name="ocupacionRepresentante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="empresaRepresentante">Empresa donde trabaja:<span class="required">*</span></label>
+                        <input type="text" id="empresaRepresentante" name="empresaRepresentante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="puestoRepresentante">Puesto en el trabajo:<span class="required">*</span></label>
+                        <input type="text" id="puestoRepresentante" name="puestoRepresentante" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ingresosRepresentante">Ingresos del trabajo:<span class="required">*</span></label>
+                            <select id="ingresosRepresentante" name="ingresosRepresentante">
+                                <option value="">-- SELECCIONE --</option>
+                                <option value="49">Menos de $50</option>
+                                <option value="200">$50 - $200</option>
+                                <option value="500">$201 - $500</option>
+                                <option value="1000">$501 - $1,000</option>
+                                <option value="9999">Más de $1,000</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoTrabajoRepresentante">Teléfono del trabajo:<span class="required">*</span></label>
+                        <input type="tel" id="telefonoTrabajoRepresentante" name="telefonoTrabajoRepresentante" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="direccionTrabajoRepresentante">Dirección del trabajo:<span class="required">*</span></label>
+                        <textarea id="direccionTrabajoRepresentante" name="direccionTrabajoRepresentante" rows="2" required></textarea>
+                    </div>
+                </div>
+            </div>            
 
             <div class="form-section">
                 <h3 class="section-header">Datos del Padre</h3>
@@ -188,6 +330,8 @@
                         <label for="tipoDocPadre">Tipo de documento:<span class="required">*</span></label>
                         <select id="tipoDocPadre" name="tipoDocPadre" required>
                             <option value="">-- Seleccione --</option>
+                            <option value="V">VENEZOLANO</option>
+                            <option value="E">EXTRANJERO</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -195,12 +339,16 @@
                         <input type="text" placeholder="Ej: 25004012" id="docPadre" name="docPadre" required>
                     </div>
                     <div class="form-group">
-                        <label for="apellidoPadre">Apellidos:<span class="required">*</span></label>
-                        <input type="text" id="apellidoPadre" name="apellidoPadre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombrePadre">Nombres:<span class="required">*</span></label>
+                        <label for="nombrePadre">Nombre:<span class="required">*</span></label>
                         <input type="text" id="nombrePadre" name="nombrePadre" required>
+                        <label for="segundoNombrePadre">Segundo nombre:<span class="required">*</span></label>
+                        <input type="text" id="segundoNombrePadre" name="segundoNombrePadre" required>
+                    </div>                    
+                    <div class="form-group">
+                        <label for="apellidoPadre">Apellido:<span class="required">*</span></label>
+                        <input type="text" id="apellidoPadre" name="apellidoPadre" required>
+                        <label for="segundoApellidoPadre">Segundo apellido:<span class="required">*</span></label>
+                        <input type="text" id="segundoApellidoPadre" name="segundoApellidoPadre" required>
                     </div>
                     <div class="form-group">
                         <label for="fechaNacPadre">Fecha de nacimiento:<span class="required">*</span></label>
@@ -211,6 +359,7 @@
                         <select id="paisNacPadre" name="paisNacPadre" required>
                             <option value="">-- Seleccione --</option>
                             <option value="VE">VENEZUELA</option>
+                            <option value="OTRO">OTRO</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -283,7 +432,14 @@
                     </div>
                     <div class="form-group">
                         <label for="ingresosPadre">Ingresos del trabajo:<span class="required">*</span></label>
-                        <input type="text" id="ingresosPadre" name="ingresosPadre" required>
+                            <select id="ingresosPadre" name="ingresosPadre">
+                                <option value="">-- SELECCIONE --</option>
+                                <option value="49">Menos de $50</option>
+                                <option value="200">$50 - $200</option>
+                                <option value="500">$201 - $500</option>
+                                <option value="1000">$501 - $1,000</option>
+                                <option value="9999">Más de $1,000</option>
+                            </select>
                     </div>
                     <div class="form-group">
                         <label for="telefonoTrabajoPadre">Teléfono del trabajo:<span class="required">*</span></label>
@@ -303,6 +459,8 @@
                         <label for="tipoDocMadre">Tipo de documento:<span class="required">*</span></label>
                         <select id="tipoDocMadre" name="tipoDocMadre" required>
                             <option value="">-- Seleccione --</option>
+                            <option value="V">VENEZOLANO</option>
+                            <option value="E">EXTRANJERO</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -310,13 +468,18 @@
                         <input type="text" placeholder="Ej: 25004012" id="docMadre" name="docMadre" required>
                     </div>
                     <div class="form-group">
-                        <label for="apellidoMadre">Apellidos:<span class="required">*</span></label>
-                        <input type="text" id="apellidoMadre" name="apellidoMadre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombreMadre">Nombres:<span class="required">*</span></label>
+                        <label for="nombreMadre">Nombre:<span class="required">*</span></label>
                         <input type="text" id="nombreMadre" name="nombreMadre" required>
+                        <label for="segundoNombreMadre">Segundo nombre:<span class="required">*</span></label>
+                        <input type="text" id="segundoNombreMadre" name="segundoNombreMadre" required>
+                    </div>                    
+                    <div class="form-group">
+                        <label for="apellidoMadre">Apellido:<span class="required">*</span></label>
+                        <input type="text" id="apellidoMadre" name="apellidoMadre" required>
+                        <label for="segundoApellidoMadre">Segundo apellido:<span class="required">*</span></label>
+                        <input type="text" id="segundoApellidoMadre" name="segundoApellidoMadre" required>
                     </div>
+
                     <div class="form-group">
                         <label for="fechaNacMadre">Fecha de nacimiento:<span class="required">*</span></label>
                         <input type="date" id="fechaNacMadre" name="fechaNacMadre" required>
@@ -326,6 +489,7 @@
                         <select id="paisNacMadre" name="paisNacMadre" required>
                             <option value="">-- Seleccione --</option>
                             <option value="VE">VENEZUELA</option>
+                            <option value="OTRO">OTRO</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -340,6 +504,10 @@
                         <label for="estadoCivilMadre">Estado Civil:<span class="required">*</span></label>
                         <select id="estadoCivilMadre" name="estadoCivilMadre" required>
                             <option value="">-- Seleccione --</option>
+                            <option value="SOLTERA">SOLTERA</option>
+                            <option value="CASADA">CASADA</option>
+                            <option value="DIVORCIADA">DIVORCIADA</option>
+                            <option value="VIUDA">VIUDA</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -394,7 +562,14 @@
                     </div>
                     <div class="form-group">
                         <label for="ingresosMadre">Ingresos del trabajo:<span class="required">*</span></label>
-                        <input type="text" id="ingresosMadre" name="ingresosMadre" required>
+                            <select id="ingresosMadre" name="ingresosMadre">
+                                <option value="">-- SELECCIONE --</option>
+                                <option value="49">Menos de $50</option>
+                                <option value="200">$50 - $200</option>
+                                <option value="500">$201 - $500</option>
+                                <option value="1000">$501 - $1,000</option>
+                                <option value="9999">Más de $1,000</option>
+                            </select>                        
                     </div>
                     <div class="form-group">
                         <label for="telefonoTrabajoMadre">Teléfono del trabajo:<span class="required">*</span></label>

@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const printPdfBtn = document.getElementById('printPdfBtn');
-
-        // Obtener los elementos del DOM
+    // --- País de nacimiento: mostrar/ocultar campos según selección ---
     const paisNacimientoSelect = document.getElementById('paisNacEstudiante');
     const estadosVenezuelaContainer = document.getElementById('estadosVenezuelaContainer');
     const paisesMundoContainer = document.getElementById('paisesMundoContainer');
 
-    // Función que se ejecuta cada vez que el valor del select cambia
     function manejarCambioPais() {
         if (paisNacimientoSelect.value === 'VE') {
             estadosVenezuelaContainer.style.display = 'block';
@@ -15,77 +12,204 @@ document.addEventListener('DOMContentLoaded', function() {
             estadosVenezuelaContainer.style.display = 'none';
             paisesMundoContainer.style.display = 'block';
         } else {
-            // Si se selecciona la opción por defecto, ocultamos ambos
             estadosVenezuelaContainer.style.display = 'none';
             paisesMundoContainer.style.display = 'none';
         }
     }
 
-    // Agregar un "escuchador" de eventos al select de países
     if (paisNacimientoSelect) {
         paisNacimientoSelect.addEventListener('change', manejarCambioPais);
-        // Llamar a la función una vez al inicio para establecer el estado correcto
         manejarCambioPais();
     }
-    
+
+    // --- Impresión PDF ---
+    const printPdfBtn = document.getElementById('printPdfBtn');
     if (printPdfBtn) {
         printPdfBtn.addEventListener('click', function() {
-            // Creamos una nueva instancia de jsPDF
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
-            
-            // Título del documento
+
             doc.setFontSize(22);
             doc.text("FORMULARIO DE INSCRIPCIÓN", 105, 20, null, null, "center");
-            
-            // Línea de separación
             doc.setLineWidth(0.5);
             doc.line(20, 25, 190, 25);
 
-            // Obtenemos los valores de los campos
-            const anioEscolar = document.getElementById('anioEscolar').value || 'No aplica';
-            const curso = document.getElementById('curso').value || 'No aplica';
-            const nombreEstudiante = document.getElementById('nombreEstudiante').value || 'No aplica';
-            const apellidoEstudiante = document.getElementById('apellidoEstudiante').value || 'No aplica';
-
-            let y = 35; // Posición vertical inicial
+            let y = 35;
 
             // Sección 1: Datos del Estudiante
             doc.setFontSize(16);
-            doc.text("Datos del Estudiante", 20, y);
-            y += 10;
+            doc.text("Datos del Estudiante", 20, y); y += 10;
             doc.setFontSize(12);
-            doc.text(`Año Escolar: ${anioEscolar}`, 20, y);
-            y += 7;
-            doc.text(`Curso: ${curso}`, 20, y);
-            y += 7;
-            doc.text(`Nombre Completo: ${nombreEstudiante} ${apellidoEstudiante}`, 20, y);
-            y += 10;
-            
-            // Aquí puedes seguir añadiendo más campos del formulario...
-            // Por ejemplo:
-            const fechaNacEstudiante = document.getElementById('fechaNacEstudiante').value || 'No aplica';
-            const lugarNacEstudiante = document.getElementById('lugarNacEstudiante').value || 'No aplica';
-            doc.text(`Fecha de Nacimiento: ${fechaNacEstudiante}`, 20, y);
-            y += 7;
-            doc.text(`Lugar de Nacimiento: ${lugarNacEstudiante}`, 20, y);
-            y += 10;
+            doc.text(`Año Escolar: ${document.getElementById('anioEscolar').value || 'No aplica'}`, 20, y); y += 7;
+            doc.text(`Curso: ${document.getElementById('curso').value || 'No aplica'}`, 20, y); y += 7;
+            doc.text(`Nombre Completo: ${document.getElementById('nombreEstudiante').value || ''} ${document.getElementById('apellidoEstudiante').value || ''}`, 20, y); y += 7;
+            doc.text(`Fecha de Nacimiento: ${document.getElementById('fechaNacEstudiante').value || 'No aplica'}`, 20, y); y += 7;
+            doc.text(`Lugar de Nacimiento: ${document.getElementById('lugarNacEstudiante').value || 'No aplica'}`, 20, y); y += 10;
 
             // Sección 2: Datos de los Representantes
             doc.setFontSize(16);
-            doc.text("Datos de los Representantes", 20, y);
-            y += 10;
+            doc.text("Datos de los Representantes", 20, y); y += 10;
             doc.setFontSize(12);
-            const nombrePadre = document.getElementById('nombrePadre').value || 'No aplica';
-            const apellidoPadre = document.getElementById('apellidoPadre').value || 'No aplica';
-            doc.text(`Nombre del Padre: ${nombrePadre} ${apellidoPadre}`, 20, y);
-            y += 7;
-            const nombreMadre = document.getElementById('nombreMadre').value || 'No aplica';
-            const apellidoMadre = document.getElementById('apellidoMadre').value || 'No aplica';
-            doc.text(`Nombre de la Madre: ${nombreMadre} ${apellidoMadre}`, 20, y);
+            doc.text(`Nombre del Padre: ${document.getElementById('nombrePadre').value || ''} ${document.getElementById('apellidoPadre').value || ''}`, 20, y); y += 7;
+            doc.text(`Nombre de la Madre: ${document.getElementById('nombreMadre').value || ''} ${document.getElementById('apellidoMadre').value || ''}`, 20, y); y += 10;
 
-            // Guardamos el documento
+            // Sección 3: Datos de trabajo del Representante
+            doc.setFontSize(16);
+            doc.text("Datos de trabajo del Representante", 20, y); y += 10;
+            doc.setFontSize(12);
+            doc.text(`Ocupación: ${document.getElementById('ocupacionRepresentante').value || 'No aplica'}`, 20, y); y += 7;
+            doc.text(`Empresa: ${document.getElementById('empresaRepresentante').value || 'No aplica'}`, 20, y); y += 7;
+            doc.text(`Puesto: ${document.getElementById('puestoRepresentante').value || 'No aplica'}`, 20, y); y += 7;
+            doc.text(`Ingresos: ${document.getElementById('ingresosRepresentante').value || 'No aplica'}`, 20, y); y += 7;
+            doc.text(`Teléfono del trabajo: ${document.getElementById('telefonoTrabajoRepresentante').value || 'No aplica'}`, 20, y); y += 7;
+            doc.text(`Dirección del trabajo: ${document.getElementById('direccionTrabajoRepresentante').value || 'No aplica'}`, 20, y); y += 10;
+
             doc.save('formulario-inscripcion-personalizado.pdf');
         });
     }
+
+    // --- Autorrelleno de datos de padre/madre según parentesco ---
+    const parentescoSelect = document.getElementById('parentescoRepresentante');
+    const repCampos = {
+        nombre: document.getElementById('nombreRepresentante'),
+        segundoNombre: document.getElementById('segundoNombreRepresentante'),
+        apellido: document.getElementById('apellidoRepresentante'),
+        segundoApellido: document.getElementById('segundoApellidoRepresentante'),
+        fechaNac: document.getElementById('fechaNacRepresentante'),
+        paisNac: document.getElementById('paisNacRepresentante'),
+        estadoNac: document.getElementById('estadoNacRepresentante'),
+        ciudadNac: document.getElementById('ciudadNacRepresentante'),
+        estadoCivil: document.getElementById('estadoCivilRepresentante'),
+        correo: document.getElementById('correoRepresentante'),
+        telefonoFijo: document.getElementById('telefonoFijoRepresentante'),
+        telefonoMovil: document.getElementById('telefonoMovilRepresentante'),
+        direccion: document.getElementById('direccionRepresentante'),
+        observacion: document.getElementById('observacionRepresentante'),
+        tipoDoc: document.getElementById('tipoDocRepresentante'),
+        doc: document.getElementById('docRepresentante'),
+        exAlumno: document.getElementById('exAlumnoRepresentante'),
+        periodo: document.getElementById('periodoRepresentante')
+    };
+
+    const repTrabajoCampos = {
+        ocupacion: document.getElementById('ocupacionRepresentante'),
+        empresa: document.getElementById('empresaRepresentante'),
+        puesto: document.getElementById('puestoRepresentante'),
+        ingresos: document.getElementById('ingresosRepresentante'),
+        telefonoTrabajo: document.getElementById('telefonoTrabajoRepresentante'),
+        direccionTrabajo: document.getElementById('direccionTrabajoRepresentante')
+    };
+
+    const padreCampos = {
+        nombre: document.getElementById('nombrePadre'),
+        segundoNombre: document.getElementById('segundoNombrePadre'),
+        apellido: document.getElementById('apellidoPadre'),
+        segundoApellido: document.getElementById('segundoApellidoPadre'),
+        fechaNac: document.getElementById('fechaNacPadre'),
+        paisNac: document.getElementById('paisNacPadre'),
+        estadoNac: document.getElementById('estadoNacPadre'),
+        ciudadNac: document.getElementById('ciudadNacPadre'),
+        estadoCivil: document.getElementById('estadoCivilPadre'),
+        correo: document.getElementById('correoPadre'),
+        telefonoFijo: document.getElementById('telefonoFijoPadre'),
+        telefonoMovil: document.getElementById('telefonoMovilPadre'),
+        direccion: document.getElementById('direccionPadre'),
+        observacion: document.getElementById('observacionPadre'),
+        tipoDoc: document.getElementById('tipoDocPadre'),
+        doc: document.getElementById('docPadre'),
+        exAlumno: document.getElementById('exAlumnoPadre'),
+        periodo: document.getElementById('periodoPadre')
+    };
+
+    const padreTrabajoCampos = {
+        ocupacion: document.getElementById('ocupacionPadre'),
+        empresa: document.getElementById('empresaPadre'),
+        puesto: document.getElementById('puestoPadre'),
+        ingresos: document.getElementById('ingresosPadre'),
+        telefonoTrabajo: document.getElementById('telefonoTrabajoPadre'),
+        direccionTrabajo: document.getElementById('direccionTrabajoPadre')
+    };
+
+    const madreCampos = {
+        nombre: document.getElementById('nombreMadre'),
+        segundoNombre: document.getElementById('segundoNombreMadre'),
+        apellido: document.getElementById('apellidoMadre'),
+        segundoApellido: document.getElementById('segundoApellidoMadre'),
+        fechaNac: document.getElementById('fechaNacMadre'),
+        paisNac: document.getElementById('paisNacMadre'),
+        estadoNac: document.getElementById('estadoNacMadre'),
+        ciudadNac: document.getElementById('ciudadNacMadre'),
+        estadoCivil: document.getElementById('estadoCivilMadre'),
+        correo: document.getElementById('correoMadre'),
+        telefonoFijo: document.getElementById('telefonoFijoMadre'),
+        telefonoMovil: document.getElementById('telefonoMovilMadre'),
+        direccion: document.getElementById('direccionMadre'),
+        observacion: document.getElementById('observacionMadre'),
+        tipoDoc: document.getElementById('tipoDocMadre'),
+        doc: document.getElementById('docMadre'),
+        exAlumno: document.getElementById('exAlumnaMadre'),
+        periodo: document.getElementById('periodoMadre')
+    };
+
+    const madreTrabajoCampos = {
+        ocupacion: document.getElementById('ocupacionMadre'),
+        empresa: document.getElementById('empresaMadre'),
+        puesto: document.getElementById('puestoMadre'),
+        ingresos: document.getElementById('ingresosMadre'),
+        telefonoTrabajo: document.getElementById('telefonoTrabajoMadre'),
+        direccionTrabajo: document.getElementById('direccionTrabajoMadre')
+    };
+
+    function copiarDatos(origen, destino) {
+        Object.keys(origen).forEach(key => {
+            if (origen[key] && destino[key]) {
+                destino[key].value = origen[key].value;
+            }
+        });
+    }
+
+    function limpiarDatos(destino) {
+        Object.keys(destino).forEach(key => {
+            if (destino[key]) {
+                destino[key].value = '';
+            }
+        });
+    }
+
+    function actualizarDatosPadreMadre() {
+        if (parentescoSelect.value === 'PADRE') {
+            copiarDatos(repCampos, padreCampos);
+            copiarDatos(repTrabajoCampos, padreTrabajoCampos);
+            limpiarDatos(madreCampos);
+            limpiarDatos(madreTrabajoCampos);
+        } else if (parentescoSelect.value === 'MADRE') {
+            copiarDatos(repCampos, madreCampos);
+            copiarDatos(repTrabajoCampos, madreTrabajoCampos);
+            limpiarDatos(padreCampos);
+            limpiarDatos(padreTrabajoCampos);
+        } else {
+            limpiarDatos(padreCampos);
+            limpiarDatos(madreCampos);
+            limpiarDatos(padreTrabajoCampos);
+            limpiarDatos(madreTrabajoCampos);
+        }
+    }
+
+    if (parentescoSelect) {
+        parentescoSelect.addEventListener('change', actualizarDatosPadreMadre);
+    }
+
+    [...Object.values(repCampos), ...Object.values(repTrabajoCampos)].forEach(input => {
+        if (input) {
+            input.addEventListener('input', function() {
+                if (parentescoSelect.value === 'PADRE') {
+                    copiarDatos(repCampos, padreCampos);
+                    copiarDatos(repTrabajoCampos, padreTrabajoCampos);
+                } else if (parentescoSelect.value === 'MADRE') {
+                    copiarDatos(repCampos, madreCampos);
+                    copiarDatos(repTrabajoCampos, madreTrabajoCampos);
+                }
+            });
+        }
+    });
 });

@@ -80,7 +80,7 @@ const profesores = [
     {
         nombre: "José Luna",
         materia: "Deporte",
-        imagen: "img/profesores/profesor1.jpg",
+        imagen: "img/profile-male.jpg",
         descripcion: "Apasionada por los números y la enseñanza divertida.",
         estadisticas: {
             Paciencia: 92,
@@ -93,7 +93,7 @@ const profesores = [
     {
         nombre: "Jacklis Caraballo",
         materia: "Danza",
-        imagen: "img/profesores/profesor2.jpg",
+        imagen: "img/profile-female.jpg",
         descripcion: "Hace que la gramática sea fácil y entretenida.",
         estadisticas: {
             Paciencia: 80,
@@ -106,7 +106,7 @@ const profesores = [
     {
         nombre: "Gilberto Jiménez",
         materia: "Inglés",
-        imagen: "img/profesores/profesor1.jpg",
+        imagen: "img/profile-male.jpg",
         descripcion: "Apasionada por los números y la enseñanza divertida.",
         estadisticas: {
             Paciencia: 92,
@@ -119,7 +119,7 @@ const profesores = [
     {
         nombre: "Rafael Moreno",
         materia: "Lengua",
-        imagen: "img/profesores/profesor2.jpg",
+        imagen: "img/profile-male.jpg",
         descripcion: "Hace que la gramática sea fácil y entretenida.",
         estadisticas: {
             Paciencia: 80,
@@ -132,7 +132,7 @@ const profesores = [
     {
         nombre: "Zulma Landaeta",
         materia: "Matemáticas",
-        imagen: "img/profesores/profesor1.jpg",
+        imagen: "img/profile-female.jpg",
         descripcion: "Apasionada por los números y la enseñanza divertida.",
         estadisticas: {
             Paciencia: 92,
@@ -145,7 +145,7 @@ const profesores = [
     {
         nombre: "Patricia Luna",
         materia: "Química",
-        imagen: "img/profesores/profesor2.jpg",
+        imagen: "img/profile-female.jpg",
         descripcion: "Hace que la gramática sea fácil y entretenida.",
         estadisticas: {
             Paciencia: 80,
@@ -158,7 +158,7 @@ const profesores = [
     {
         nombre: "Eduardo Ramírez",
         materia: "Educación Física",
-        imagen: "img/profesores/profesor1.jpg",
+        imagen: "img/profile-male.jpg",
         descripcion: "Apasionada por los números y la enseñanza divertida.",
         estadisticas: {
             Paciencia: 92,
@@ -171,7 +171,7 @@ const profesores = [
     {
         nombre: "Mariela Bello",
         materia: "Formación a la Soberanía Nacional",
-        imagen: "img/profesores/profesor2.jpg",
+        imagen: "img/profile-female.jpg",
         descripcion: "Hace que la gramática sea fácil y entretenida.",
         estadisticas: {
             Paciencia: 80,
