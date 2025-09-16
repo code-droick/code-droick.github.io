@@ -41,6 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 
+    function exit() {
+        window.location.href = "index.html";
+    }
+
     function prevStep() {
         if (currentStep > 0) {
             currentStep--;
@@ -80,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hacer globales para el HTML
     window.nextStep = nextStep;
     window.prevStep = prevStep;
+    window.exit = exit;
 
     // Inicializa mostrando la primera página
     showStep(currentStep);
